@@ -2,7 +2,9 @@
     "name": "@wyvr/package-form",
     "type": "module",
     "keywords": [
-        "wyvr"
+        "wyvr",
+        "package",
+        "form"
     ],
     "dependencies": {}
 }
