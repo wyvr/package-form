@@ -1,0 +1,49 @@
+.handle {
+    color: var(--color-text-on);
+}
+.handle:global(.dragging) {
+    background-color: var(--color-secondary);
+}
+.handle:before {
+    content: attr(data-value);
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -250%) scale(0.75);
+    width: calc(var(--size) * 3);
+    text-align: center;
+    overflow: hidden;
+    color: var(--color-text);
+    font-size: 0.75em;
+    opacity: 0;
+    transition: opacity 0.1s linear, transform 0.1s linear;
+}
+.handle:global(.dragging):before {
+    transform: translate(-50%, -250%);
+    opacity: 1;
+}
+.handle:after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    border-bottom-right-radius: 0;
+    width: calc(var(--size) * 3);
+    height: calc(var(--size) * 3);
+    transform: rotate(45deg) translate(-120%, -35%) scale(0.75);
+    transform-origin: right bottom;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.1s linear, transform 0.1s linear;
+}
+
+.handle:global(.dragging):after {
+    opacity: 1;
+    transform: rotate(45deg) translate(-120%, -35%);
+}
+.handle i {
+    transform: rotate(90deg);
+}

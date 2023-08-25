@@ -1,0 +1,32 @@
+select {
+    font: var(--size) / 1.2em sans-serif;
+    width: 100%;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+    font: var(--size) / 1.2em sans-serif;
+    border-radius: calc(var(--size) * 0.25);
+    padding: calc(var(--size) * 0.25) calc(var(--size) * 1.5) calc(var(--size) * 0.25) calc(var(--size) * 0.5);
+    transition: border 0.1s linear;
+    outline: none;
+    height: calc(var(--size) * 2.5);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+select:focus {
+    border-color: var(--color-primary);
+}
+.select {
+    position: relative;
+}
+.select::after {
+    content: ' ';
+    position: absolute;
+    width: 0.5em;
+    height: 0.5em;
+    transform: rotate(45deg);
+    border-bottom: 2px solid var(--color-text);
+    border-right: 2px solid var(--color-text);
+    right: 0.75em;
+    top: calc(50% - 0.25em - 1px);
+}

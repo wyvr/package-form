@@ -1,0 +1,8 @@
+{
+    "name": "@wyvr/package-form",
+    "type": "module",
+    "keywords": [
+        "wyvr"
+    ],
+    "dependencies": {}
+}
