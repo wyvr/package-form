@@ -1,10 +1,22 @@
 {
-    "name": "@wyvr/package-form",
-    "type": "module",
-    "keywords": [
-        "wyvr",
-        "package",
-        "form"
-    ],
-    "dependencies": {}
+  "name": "@wyvr/package-form",
+  "type": "module",
+  "keywords": [
+    "wyvr",
+    "package",
+    "form"
+  ],
+  "description": "Package for [wyvr](https://wyvr.dev) which contains basic form elements",
+  "version": "0.0.0",
+  "main": "wyvr.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wyvr/package-form.git"
+  },
+  "author": "wyvr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wyvr/package-form/issues"
+  },
+  "homepage": "https://github.com/wyvr/package-form#readme"
 }
