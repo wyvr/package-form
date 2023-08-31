@@ -5,6 +5,7 @@
         <input name={get_name} {id} {required} {disabled} type="password" bind:value bind:this={pwd} />
     {/if}
     {#if $$slots.default}
+        <label for={id}><slot /></label>
     {/if}
     {#if reveal}
         <div class="revealer" on:mousedown={show} on:mouseup={hide}>
@@ -14,8 +15,5 @@
                 👁
             {/if}
         </div>
-    {/if}
-    {#if $$slots.default}
-        <label for={id}><slot /></label>
     {/if}
 </div>
