@@ -5,13 +5,13 @@
         <input name={id} {id} {required} {disabled} type="password" bind:value bind:this={pwd} />
     {/if}
     {#if reveal}
-    <div class="revealer" on:mousedown={show} on:mouseup={hide}>
-        {#if revealed}
-            <i class="ri-eye-line" />
-        {:else}
-            <i class="ri-eye-close-line" />
-        {/if}
-    </div>
+        <div class="revealer" on:mousedown={show} on:mouseup={hide}>
+            {#if revealed}
+                ✘
+            {:else}
+                👁
+            {/if}
+        </div>
     {/if}
     {#if $$slots.default}
         <label for={id}><slot /></label>
