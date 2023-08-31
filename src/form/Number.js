@@ -22,8 +22,7 @@ export let step = null;
 
 let input;
 
-$: set_focus(focus, input);
-
 $: get_name = name ? name : id;
+$: set_focus(focus, input);
 
 onMount(() => {});

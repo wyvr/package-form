@@ -1,6 +1,6 @@
 <div class="base">
     <div class="select">
-        <select name={id} {id} {required} {disabled} bind:value bind:this={input} on:change={() => dispatch('input', value)}>
+        <select name={get_name} {id} {required} {disabled} bind:value bind:this={input} on:change={() => dispatch('input', value)}>
             {#each options as option}
             <option value={option.value}>{option.name}</option>
             {/each}

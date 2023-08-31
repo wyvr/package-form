@@ -12,6 +12,7 @@ import { set_focus } from '@src/form/Base.js';
 const dispatch = createEventDispatcher();
 
 export let id = null;
+export let name = null;
 export let value = null;
 export let required = false;
 export let disabled = false;
@@ -26,9 +27,7 @@ export let to = 100;
 
 let internal_value = [];
 
-// $: {
-//     console.log(internal_value)
-// }
+$: get_name = name ? name : id;
 
 onMount(() => {});
 

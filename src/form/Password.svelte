@@ -1,8 +1,10 @@
 <div class="base">
     {#if revealed}
-        <input name={id} {id} {required} {disabled} type="text" bind:value bind:this={pwd} />
+        <input name={get_name} {id} {required} {disabled} type="text" bind:value bind:this={pwd} />
     {:else}
-        <input name={id} {id} {required} {disabled} type="password" bind:value bind:this={pwd} />
+        <input name={get_name} {id} {required} {disabled} type="password" bind:value bind:this={pwd} />
+    {/if}
+    {#if $$slots.default}
     {/if}
     {#if reveal}
         <div class="revealer" on:mousedown={show} on:mouseup={hide}>

@@ -15,6 +15,7 @@ import { to_result, round, value_to_offset, offset_to_value, limit } from '@src/
 const dispatch = createEventDispatcher();
 
 export let id = null;
+export let name = null;
 export let value = null;
 export let required = false;
 export let disabled = false;
@@ -44,6 +45,7 @@ let internal_to;
 let is_touching = false;
 let touch_x = 0;
 
+$: get_name = name ? name : id;
 $: decimals = (step + '').split('.').length > 0 ? (step + '').split('.')[1].length : 0;
 // $: internal_from = round(from, decimals);
 // $: internal_to = round(to, decimals);

@@ -10,6 +10,7 @@ import { set_focus } from '@src/form/Base.js';
  */
 
 export let id = null;
+export let name = null;
 export let value = null;
 export let required = false;
 export let disabled = false;
@@ -27,6 +28,7 @@ function hide() {
     pwd.focus();
 }
 
+$: get_name = name ? name : id;
 $: set_focus(focus, pwd);
 
 onMount(() => {});
