@@ -6,7 +6,7 @@
     import { onMount, createEventDispatcher } from 'svelte';
 
     /**
-     * <Slider id={'id'} bind:value={value} required={false} multiline={false} disabled={false} focus={false}>Label</Slider>
+     * <Slider id={'id'} bind:value={value} required={false} multiline={false} disabled={false} focus={false} readonly={false}>Label</Slider>
      */
 
     const dispatch = createEventDispatcher();
@@ -18,6 +18,7 @@
     export let step = 1;
     export let from = 0;
     export let to = 100;
+    export let readonly = false;
 
     $: get_name = name ? name : id;
 
@@ -32,9 +33,9 @@
     <!-- <Slider bind:value name={id} on:input={(e)=>{console.log(e)}} {min} {max} {step} {range} {order} /> -->
     <div>
         from {from} to {to}
-        <input type="range" name="{get_name}_from" id="{id}_from" bind:value={from} {min} {max} {step} on:change={() => update(from, to)} />
+        <input type="range" name="{get_name}_from" id="{id}_from" bind:value={from} {min} {max} {step} {readonly} on:change={() => update(from, to)} />
         -
-        <input type="range" name="{get_name}_from" id="{id}_to" bind:value={to} {min} {max} {step} on:change={() => update(from, to)} />
+        <input type="range" name="{get_name}_from" id="{id}_to" bind:value={to} {min} {max} {step} {readonly} on:change={() => update(from, to)} />
     </div>
     {#if $$slots.default}
         <label for="{id}_from"><slot /></label>

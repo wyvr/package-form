@@ -6,7 +6,7 @@
     import { set_focus } from '@src/form/Base.js';
 
     /**
-     * <Number id={'id'} bind:value={value} required={false} disabled={false} focus={false} min={1} max={10} step={1}>Label</Number>
+     * <Number id={'id'} bind:value={value} required={false} disabled={false} focus={false} min={1} max={10} step={1} readonly={false}>Label</Number>
      */
 
     export let id = null;
@@ -19,6 +19,7 @@
     export let min = null;
     export let max = null;
     export let step = null;
+    export let readonly = false;
 
     let input;
 
@@ -27,7 +28,7 @@
 </script>
 
 <div class="base">
-    <input type="number" name={get_name} {id} {min} {max} {step} {required} {disabled} bind:value bind:this={input} {placeholder} />
+    <input type="number" name={get_name} {id} {min} {max} {step} {required} {disabled} bind:value bind:this={input} {placeholder} {readonly} />
 
     {#if $$slots.default}
         <label for={id}><slot /></label>

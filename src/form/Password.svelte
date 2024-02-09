@@ -7,7 +7,7 @@
     import { set_focus } from '@src/form/Base.js';
 
     /**
-     * <Password id={'id'} bind:value={value} required={false} disabled={false} reveal={true} focus={false}>Label</Password>
+     * <Password id={'id'} bind:value={value} required={false} disabled={false} reveal={true} focus={false} readonly={false}>Label</Password>
      */
 
     export let id = null;
@@ -17,6 +17,7 @@
     export let disabled = false;
     export let reveal = true;
     export let focus = false;
+    export let readonly = false;
 
     let revealed = false;
     let pwd;
@@ -37,9 +38,9 @@
 
 <div class="base">
     {#if revealed}
-        <input name={get_name} {id} {required} {disabled} type="text" bind:value bind:this={pwd} />
+        <input name={get_name} {id} {required} {disabled} {readonly} type="text" bind:value bind:this={pwd} />
     {:else}
-        <input name={get_name} {id} {required} {disabled} type="password" bind:value bind:this={pwd} />
+        <input name={get_name} {id} {required} {disabled} {readonly} type="password" bind:value bind:this={pwd} />
     {/if}
     {#if $$slots.default}
         <label for={id}><slot /></label>
