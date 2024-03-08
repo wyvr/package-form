@@ -39,9 +39,7 @@
             dispatch('change', { data, value });
         }}
     />
-    {#if $$slots.default}
-        <label for={id}><slot /></label>
-    {/if}
+    <label for={id}><slot /></label>
 </div>
 
 <style>
