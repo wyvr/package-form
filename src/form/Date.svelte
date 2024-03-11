@@ -27,6 +27,10 @@
     $: set_focus(focus, input);
     $: update_value(value);
     function update_value() {
+        if(!value) {
+            internal_value = undefined;
+            return
+        }
         if (value instanceof Date) {
             internal_value = value.toISOString().slice(0, 10);
             return;
