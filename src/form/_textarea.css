@@ -1,5 +1,4 @@
 textarea {
-    font: var(--size) / 1.2em sans-serif;
     width: 100%;
     background-color: var(--color-background);
     color: var(--color-text);
