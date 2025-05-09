@@ -1,4 +1,4 @@
-input:not([type='submit']) {
+input:not([type="submit"]) {
     font: var(--size) / 1.2em sans-serif;
     width: 100%;
     background-color: var(--color-background);
@@ -17,7 +17,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input:not([type='submit']):focus {
+input:not([type="submit"]):focus {
     border-color: var(--color-primary);
 }
 

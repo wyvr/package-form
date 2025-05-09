@@ -30,10 +30,10 @@ exports.round = (value, dec) => {
     return Math.round(value * factor) / factor;
 };
 exports.limit = (value, min, max) => {
-    if(value > max) {
+    if (value > max) {
         return max;
     }
-    if(value < min) {
+    if (value < min) {
         return min;
     }
     return value;

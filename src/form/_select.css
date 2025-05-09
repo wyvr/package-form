@@ -20,7 +20,7 @@ select:focus {
     position: relative;
 }
 .select::after {
-    content: ' ';
+    content: " ";
     position: absolute;
     width: 0.5em;
     height: 0.5em;

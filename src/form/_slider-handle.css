@@ -24,7 +24,7 @@
     opacity: 1;
 }
 .handle:after {
-    content: '';
+    content: "";
     position: absolute;
     background-color: var(--color-secondary);
     border-radius: 50%;

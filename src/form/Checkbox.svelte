@@ -1,29 +1,29 @@
 <script>
-    wyvr: {
-        render: 'hydrate';
-    }
+wyvr: {
+    render: 'hydrate';
+}
 
-    import { set_focus } from '@src/form/Base.js';
-    import { createEventDispatcher } from 'svelte';
+import { set_focus } from '@src/form/Base.js';
+import { createEventDispatcher } from 'svelte';
 
-    /**
-     * <Checkbox id={'id'} bind:value={value} required={false} disabled={false} focus={false}>Label</Checkbox>
-     */
+/**
+ * <Checkbox id={'id'} bind:value={value} required={false} disabled={false} focus={false}>Label</Checkbox>
+ */
 
-    export let id = null;
-    export let name = null;
-    export let value = false;
-    export let required = false;
-    export let disabled = false;
-    export let focus = false;
-    export let data = undefined;
+export let id = null;
+export let name = null;
+export let value = false;
+export let required = false;
+export let disabled = false;
+export let focus = false;
+export let data = undefined;
 
-    let input;
+let input;
 
-    const dispatch = createEventDispatcher();
+const dispatch = createEventDispatcher();
 
-    $: get_name = name ? name : id;
-    $: set_focus(focus, input);
+$: get_name = name ? name : id;
+$: set_focus(focus, input);
 </script>
 
 <div class="base">

@@ -1,30 +1,30 @@
 <script>
-    wyvr: {
-        render: 'hydrate';
-    }
+wyvr: {
+    render: 'hydrate';
+}
 
-    import { set_focus } from '@src/form/Base.js';
+import { set_focus } from '@src/form/Base.js';
 
-    /**
-     * <Number id={'id'} bind:value={value} required={false} disabled={false} focus={false} min={1} max={10} step={1} readonly={false}>Label</Number>
-     */
+/**
+ * <Number id={'id'} bind:value={value} required={false} disabled={false} focus={false} min={1} max={10} step={1} readonly={false}>Label</Number>
+ */
 
-    export let id = null;
-    export let name = null;
-    export let value = null;
-    export let required = false;
-    export let disabled = false;
-    export let focus = false;
-    export let placeholder = null;
-    export let min = null;
-    export let max = null;
-    export let step = null;
-    export let readonly = false;
+export let id = null;
+export let name = null;
+export let value = null;
+export let required = false;
+export let disabled = false;
+export let focus = false;
+export let placeholder = null;
+export let min = null;
+export let max = null;
+export let step = null;
+export let readonly = false;
 
-    let input;
+let input;
 
-    $: get_name = name ? name : id;
-    $: set_focus(focus, input);
+$: get_name = name ? name : id;
+$: set_focus(focus, input);
 </script>
 
 <div class="base">

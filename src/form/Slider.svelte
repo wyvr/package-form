@@ -1,32 +1,32 @@
 <script>
-    wyvr: {
-        render: 'hydrate';
-    }
+wyvr: {
+    render: 'hydrate';
+}
 
-    import { onMount, createEventDispatcher } from 'svelte';
+import { onMount, createEventDispatcher } from 'svelte';
 
-    /**
-     * <Slider id={'id'} bind:value={value} required={false} multiline={false} disabled={false} focus={false} readonly={false}>Label</Slider>
-     */
+/**
+ * <Slider id={'id'} bind:value={value} required={false} multiline={false} disabled={false} focus={false} readonly={false}>Label</Slider>
+ */
 
-    const dispatch = createEventDispatcher();
+const dispatch = createEventDispatcher();
 
-    export let id = null;
-    export let name = null;
-    export let min = 0;
-    export let max = 100;
-    export let step = 1;
-    export let from = 0;
-    export let to = 100;
-    export let readonly = false;
+export let id = null;
+export let name = null;
+export let min = 0;
+export let max = 100;
+export let step = 1;
+export let from = 0;
+export let to = 100;
+export let readonly = false;
 
-    $: get_name = name ? name : id;
+$: get_name = name ? name : id;
 
-    onMount(() => {});
+onMount(() => {});
 
-    function update() {
-        dispatch('input', { from, to });
-    }
+function update() {
+    dispatch('input', { from, to });
+}
 </script>
 
 <div class="base">

@@ -1,12 +1,12 @@
-input[type='checkbox'] {
+input[type="checkbox"] {
     position: absolute !important;
     height: 1px;
     width: 1px;
     overflow: hidden;
     clip: rect(1px, 1px, 1px, 1px);
 }
-input[type='checkbox'] + label:before {
-    content: '✔';
+input[type="checkbox"] + label:before {
+    content: "✔";
     display: inline-block;
     width: 1.2em;
     height: 1.2em;
@@ -23,13 +23,13 @@ input[type='checkbox'] + label:before {
     text-align: center;
     vertical-align: baseline;
 }
-input[type='checkbox']:focus + label:before {
+input[type="checkbox"]:focus + label:before {
     border-color: var(--color-primary);
 }
-input[type='checkbox']:checked + label:before {
+input[type="checkbox"]:checked + label:before {
     color: var(--color-text);
 }
-[disabled][type='checkbox'] + label:before {
+[disabled][type="checkbox"] + label:before {
     filter: grayscale(1);
     opacity: 0.5;
     pointer-events: none;

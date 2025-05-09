@@ -1,5 +1,8 @@
 export default {
     assets: [
-        { src: './node_modules/nouislider/dist/nouislider.css', target: 'nouislider.css' }
-    ],
+        {
+            src: './node_modules/nouislider/dist/nouislider.css',
+            target: 'nouislider.css'
+        }
+    ]
 };

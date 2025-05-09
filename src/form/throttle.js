@@ -8,4 +8,4 @@ export default function throttle(fn, delay = 300) {
         lastCalled = now;
         return fn(...args);
     };
-};
+}

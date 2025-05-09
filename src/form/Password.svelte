@@ -1,39 +1,39 @@
 <script>
-    wyvr: {
-        render: 'hydrate';
-    }
+wyvr: {
+    render: 'hydrate';
+}
 
-    import { onMount } from 'svelte';
-    import { set_focus } from '@src/form/Base.js';
+import { onMount } from 'svelte';
+import { set_focus } from '@src/form/Base.js';
 
-    /**
-     * <Password id={'id'} bind:value={value} required={false} disabled={false} reveal={true} focus={false} readonly={false}>Label</Password>
-     */
+/**
+ * <Password id={'id'} bind:value={value} required={false} disabled={false} reveal={true} focus={false} readonly={false}>Label</Password>
+ */
 
-    export let id = null;
-    export let name = null;
-    export let value = null;
-    export let required = false;
-    export let disabled = false;
-    export let reveal = true;
-    export let focus = false;
-    export let readonly = false;
+export let id = null;
+export let name = null;
+export let value = null;
+export let required = false;
+export let disabled = false;
+export let reveal = true;
+export let focus = false;
+export let readonly = false;
 
-    let revealed = false;
-    let pwd;
+let revealed = false;
+let pwd;
 
-    function show() {
-        revealed = true;
-    }
-    function hide() {
-        revealed = false;
-        pwd.focus();
-    }
+function show() {
+    revealed = true;
+}
+function hide() {
+    revealed = false;
+    pwd.focus();
+}
 
-    $: get_name = name ? name : id;
-    $: set_focus(focus, pwd);
+$: get_name = name ? name : id;
+$: set_focus(focus, pwd);
 
-    onMount(() => {});
+onMount(() => {});
 </script>
 
 <div class="base">

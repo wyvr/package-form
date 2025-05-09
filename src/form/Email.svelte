@@ -1,27 +1,27 @@
 <script>
-    wyvr: {
-        render: 'hydrate';
-    }
+wyvr: {
+    render: 'hydrate';
+}
 
-    import { set_focus } from '@src/form/Base.js';
+import { set_focus } from '@src/form/Base.js';
 
-    /**
-     * <Email id={'id'} bind:value={value} required={false} disabled={false} focus={false} readonly={false}>Label</Email>
-     */
+/**
+ * <Email id={'id'} bind:value={value} required={false} disabled={false} focus={false} readonly={false}>Label</Email>
+ */
 
-    export let id = null;
-    export let name = null;
-    export let value = null;
-    export let required = false;
-    export let disabled = false;
-    export let focus = false;
-    export let placeholder = null;
-    export let readonly = false;
+export let id = null;
+export let name = null;
+export let value = null;
+export let required = false;
+export let disabled = false;
+export let focus = false;
+export let placeholder = null;
+export let readonly = false;
 
-    let input;
+let input;
 
-    $: get_name = name ? name : id;
-    $: set_focus(focus, input);
+$: get_name = name ? name : id;
+$: set_focus(focus, input);
 </script>
 
 <div class="base">

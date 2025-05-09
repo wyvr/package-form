@@ -21,4 +21,3 @@ textarea:focus {
 textarea:invalid {
     border-color: var(--color-error);
 }
-

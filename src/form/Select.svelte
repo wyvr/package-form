@@ -1,29 +1,29 @@
 <script>
-    wyvr: {
-        render: 'hydrate';
-    }
+wyvr: {
+    render: 'hydrate';
+}
 
-    import { createEventDispatcher } from 'svelte';
-    import { set_focus } from '@src/form/Base.js';
+import { createEventDispatcher } from 'svelte';
+import { set_focus } from '@src/form/Base.js';
 
-    /**
-     * <Select id={'id'} bind:value={value} options={[{ name:'all', value:'*' }]} required={false} multiline={false} disabled={false} focus={false}>Label</Select>
-     */
+/**
+ * <Select id={'id'} bind:value={value} options={[{ name:'all', value:'*' }]} required={false} multiline={false} disabled={false} focus={false}>Label</Select>
+ */
 
-    const dispatch = createEventDispatcher();
+const dispatch = createEventDispatcher();
 
-    export let id = null;
-    export let name = null;
-    export let value = null;
-    export let options = null;
-    export let required = false;
-    export let disabled = false;
-    export let focus = false;
+export let id = null;
+export let name = null;
+export let value = null;
+export let options = null;
+export let required = false;
+export let disabled = false;
+export let focus = false;
 
-    let input;
+let input;
 
-    $: get_name = name ? name : id;
-    $: set_focus(focus, input);
+$: get_name = name ? name : id;
+$: set_focus(focus, input);
 </script>
 
 <div class="base">

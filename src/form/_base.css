@@ -5,7 +5,7 @@
     position: relative;
 }
 .base [required] + label:after {
-    content: '*';
+    content: "*";
     color: var(--color-error);
 }
 label {
