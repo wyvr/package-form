@@ -4,6 +4,7 @@ wyvr: {
 }
 
 import { set_focus } from '@src/form/Base.js';
+import { onMount } from 'svelte';
 
 /**
  * <Text id={'id'} bind:value={value} required={false} multiline={false} disabled={false} focus={false} readonly={false}>Label</Text>
@@ -30,21 +31,27 @@ function adjustHeight() {
     if (autoresize && multiline && input && value !== null) {
         // Reset height to auto to get proper scrollHeight
         input.style.height = 'auto';
-
+        
         // Get computed styles
         const style = window.getComputedStyle(input);
         const borderHeight = parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
         const paddingHeight = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
-
+        
         // Calculate total height needed
         const totalHeight = input.scrollHeight + borderHeight + paddingHeight;
-
+        
         // Set the height accounting for border and padding
         input.style.height = `${totalHeight}px`;
     }
 }
 
 $: adjustHeight(value, multiline, autoresize);
+
+onMount(() => {
+    if (autoresize && multiline) {
+        adjustHeight();
+    }
+});
 </script>
 
 <div class="base">
