@@ -20,6 +20,7 @@ export let focus = false;
 export let placeholder = null;
 export let readonly = false;
 export let autoresize = true;
+export let onEnter = null;
 
 let input;
 
@@ -67,6 +68,7 @@ onMount(() => {
             {readonly}
             on:input={adjustHeight}
             style={autoresize ? "overflow: hidden; resize: none;" : ""}
+            on:keydown={(e) => { if (e.key === 'Enter' && e.ctrlKey && typeof onEnter === 'function') { onEnter(value); } }}
         />
     {:else}
         <input
