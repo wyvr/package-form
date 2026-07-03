@@ -24,11 +24,9 @@ let pwd;
 
 function show() {
     revealed = true;
-    pwd.type = 'text';
 }
 function hide() {
     revealed = false;
-    pwd.type = 'password';
     pwd.focus();
 
 }
@@ -39,13 +37,18 @@ $: set_focus(focus, pwd);
 onMount(() => {});
 </script>
 
-<div class="base" class:has-revealer={reveal}>
+<div class="base password" class:has-revealer={reveal}>
     <input name={get_name} {id} {required} {disabled} {readonly} type="password" bind:value bind:this={pwd} />
     {#if $$slots.default}
         <label for={id}><slot /></label>
     {/if}
     {#if reveal}
-        <button type="button" class="revealer" on:mousedown={show} on:mouseup={hide}>
+        {#if revealed}
+            <div class="revealed">
+                {value}
+            </div>
+        {/if}
+        <button type="button" class="revealer" on:mousedown={show} on:mouseup={hide} on:mouseout={hide}  on:blur={hide}>
             {#if $$slots.reveal}
                 <slot name="reveal" {revealed} />
             {:else if revealed}

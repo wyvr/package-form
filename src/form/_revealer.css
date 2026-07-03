@@ -26,3 +26,10 @@
 .revealer:active::after {
     opacity: 0.5;
 }
+.revealed {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
