@@ -24,10 +24,13 @@ let pwd;
 
 function show() {
     revealed = true;
+    pwd.type = 'text';
 }
 function hide() {
     revealed = false;
+    pwd.type = 'password';
     pwd.focus();
+
 }
 
 $: get_name = name ? name : id;
@@ -37,11 +40,7 @@ onMount(() => {});
 </script>
 
 <div class="base">
-    {#if revealed}
-        <input name={get_name} {id} {required} {disabled} {readonly} type="text" bind:value bind:this={pwd} />
-    {:else}
-        <input name={get_name} {id} {required} {disabled} {readonly} type="password" bind:value bind:this={pwd} />
-    {/if}
+    <input name={get_name} {id} {required} {disabled} {readonly} type="password" bind:value bind:this={pwd} />
     {#if $$slots.default}
         <label for={id}><slot /></label>
     {/if}
