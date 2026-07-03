@@ -39,7 +39,7 @@ $: set_focus(focus, pwd);
 onMount(() => {});
 </script>
 
-<div class="base">
+<div class="base" class:has-revealer={reveal}>
     <input name={get_name} {id} {required} {disabled} {readonly} type="password" bind:value bind:this={pwd} />
     {#if $$slots.default}
         <label for={id}><slot /></label>
